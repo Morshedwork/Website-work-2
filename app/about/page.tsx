@@ -1,5 +1,7 @@
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import type { ReactElement } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Target, CheckCircle, ArrowRight } from "lucide-react"
@@ -121,7 +123,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="overflow-hidden border-primary/20 hover:border-primary/50 transition-colors">
               <div className="relative h-64 w-full overflow-hidden">
-                <Image src="/placeholder.svg?height=300&width=300" alt="Team Member" fill className="object-cover" />
+                <Image src="/images/mentors/ceo.jpg" alt="Founder & CEO portrait" width={300} height={300} className="object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold">Founder & CEO</h3>
@@ -134,7 +136,7 @@ export default function AboutPage() {
 
             <Card className="overflow-hidden border-primary/20 hover:border-primary/50 transition-colors">
               <div className="relative h-64 w-full overflow-hidden">
-                <Image src="/placeholder.svg?height=300&width=300" alt="Team Member" fill className="object-cover" />
+                <Image src="/images/mentors/tech-director.jpg" alt="Technology Director portrait" width={300} height={300} className="object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold">Head of Career Services</h3>

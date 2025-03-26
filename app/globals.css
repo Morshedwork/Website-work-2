@@ -158,8 +158,7 @@
 
   /* Text contrast helpers */
   .text-white-shadow {
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    @apply text-ujjibon-white shadow-[0_2px_4px_rgba(0,0,0,0.5)];
   }
 
   .text-on-dark {
