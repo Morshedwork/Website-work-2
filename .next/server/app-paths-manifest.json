@@ -1,6 +1,4 @@
 {
   "/not-found": "app/not-found.js",
-  "/register/page": "app/register/page.js",
-  "/page": "app/page.js",
-  "/peer-ai/page": "app/peer-ai/page.js"
+  "/page": "app/page.js"
 }
