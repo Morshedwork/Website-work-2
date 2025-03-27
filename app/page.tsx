@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -36,12 +38,38 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-// Add the import for the CourseSection component at the top of the file
 import { CourseSection } from "@/components/course-section"
+
+// CSS for custom button with shadow functionality
+const buttonShadowClass = "custom-button-shadow transition-all duration-300";
+
+// CSS style for the page
+const styles = {
+  ".custom-button-shadow": {
+    transition: "all 0.3s ease",
+    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)"
+  },
+  ".custom-button-shadow:hover": {
+    borderColor: "rgba(var(--primary), 1)",
+    boxShadow: "0 10px 15px -3px rgba(255, 122, 0, 0.1), 0 4px 6px -2px rgba(255, 122, 0, 0.05)"
+  }
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Add the style tag here */}
+      <style jsx global>{`
+        .custom-button-shadow {
+          transition: all 0.3s ease;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .custom-button-shadow:hover {
+          border-color: rgba(255, 122, 0, 1);
+          box-shadow: 0 10px 15px -3px rgba(255, 122, 0, 0.1), 0 4px 6px -2px rgba(255, 122, 0, 0.05);
+        }
+      `}</style>
+      
       {/* Hero Section - Video Only */}
       <section className="bg-gradient-dark py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] opacity-20 bg-cover bg-center"></div>
@@ -85,7 +113,6 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
                   src="/videos/logo.mp4"
                   poster="/placeholder.svg?height=400&width=600"
                 >
@@ -316,7 +343,7 @@ export default function Home() {
                     <Link href="#book-counseling">
                       <Button
                         variant="outline"
-                        className="border-primary/50 hover:border-primary animate-fade-in"
+                        className={`border-primary/50 ${buttonShadowClass} animate-fade-in`}
                         style={{ animationDelay: "0.3s" }}
                       >
                         Book a Session
@@ -375,7 +402,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 Explore Programs
               </Button>
@@ -393,7 +420,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 View Opportunities
               </Button>
@@ -410,7 +437,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 Browse Courses
               </Button>
@@ -427,7 +454,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 Upcoming Events
               </Button>
@@ -443,7 +470,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 Take Assessment
               </Button>
@@ -459,7 +486,7 @@ export default function Home() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 w-full border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300"
+                className={`mt-4 w-full border-primary/50 ${buttonShadowClass}`}
               >
                 Learn More
               </Button>
@@ -699,7 +726,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Button
               variant="outline"
-              className="border-primary/50 hover:border-primary hover:shadow-lg shadow-orange-500/10 transition-all duration-300 animate-bounce-in"
+              className={`border-primary/50 ${buttonShadowClass} animate-bounce-in`}
             >
               Become a Partner
             </Button>
@@ -998,8 +1025,6 @@ export default function Home() {
       </section>
     </div>
   )
-
-  // Add this component before the closing bracket of the Home component
 }
 
 function CourseDetailModal() {

@@ -3,15 +3,15 @@ import Link from "next/link"
 import Image from "next/image"
 import type { ReactElement } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../../components/ui/card"
 import { Award, Target, CheckCircle, ArrowRight } from "lucide-react"
 
-export default function AboutPage() {
+export default function AboutPage(): ReactElement {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="bg-ujjibon-dark py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] opacity-20 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] opacity-20 bg-cover bg-center" />
         <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white-shadow">About Ujjibon</h1>
@@ -24,7 +24,7 @@ export default function AboutPage() {
       </section>
 
       {/* About Us Content */}
-      <section className="about-section bg-background">
+      <section className="about-section bg-[hsl(var(--background))]">
         <div className="container mx-auto max-w-5xl">
           <div className="about-card">
             <h2 className="about-heading">Our Mission</h2>
@@ -59,38 +59,38 @@ export default function AboutPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              <div className="bg-secondary p-6 rounded-lg">
+              <div className="bg-[hsl(var(--secondary))] p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                  <Target className="h-8 w-8 text-primary mr-3" />
+                  <Target className="h-8 w-8 text-[hsl(var(--primary))] mr-3" />
                   <h3 className="text-xl font-semibold">Our Vision</h3>
                 </div>
-                <p className="text-muted-foreground">
+                <p className="text-[hsl(var(--muted-foreground))]">
                   To create a thriving ecosystem where every young Bangladeshi has access to quality career guidance,
                   skill development resources, and job opportunities, enabling them to build successful and fulfilling
                   careers.
                 </p>
               </div>
 
-              <div className="bg-secondary p-6 rounded-lg">
+              <div className="bg-[hsl(var(--secondary))] p-6 rounded-lg">
                 <div className="flex items-center mb-4">
-                  <Award className="h-8 w-8 text-primary mr-3" />
+                  <Award className="h-8 w-8 text-[hsl(var(--primary))] mr-3" />
                   <h3 className="text-xl font-semibold">Our Values</h3>
                 </div>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2 text-[hsl(var(--muted-foreground))]">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--primary))] mr-2 mt-0.5" />
                     <span>Excellence in service delivery</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--primary))] mr-2 mt-0.5" />
                     <span>Inclusivity and accessibility</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--primary))] mr-2 mt-0.5" />
                     <span>Innovation and continuous improvement</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--primary))] mr-2 mt-0.5" />
                     <span>Integrity and transparency</span>
                   </li>
                 </ul>
@@ -110,51 +110,56 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 px-4 bg-secondary">
+      <section className="py-16 px-4 bg-[hsl(var(--secondary))]">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Team</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
               Meet the dedicated professionals behind Ujjibon who are passionate about empowering the youth of
               Bangladesh.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden border-primary/20 hover:border-primary/50 transition-colors">
+            <Card className="overflow-hidden border-[hsl(var(--primary))]/20 hover:border-[hsl(var(--primary))]/50 transition-colors">
               <div className="relative h-64 w-full overflow-hidden">
-                <Image src="/images/mentors/ceo.jpg" alt="Founder & CEO portrait" width={300} height={300} className="object-cover" />
+                <Image src="/images/mentors/ceo.jpg" alt="Founder & CEO portrait" fill className="object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold">Founder & CEO</h3>
-                <p className="text-primary">Leadership & Vision</p>
-                <p className="mt-4 text-muted-foreground">
+                <p className="text-[hsl(var(--primary))]">Leadership & Vision</p>
+                <p className="mt-4 text-[hsl(var(--muted-foreground))]">
                   Leading Ujjibon with a vision to transform career development in Bangladesh.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary/50 transition-colors">
+            <Card className="overflow-hidden border-[hsl(var(--primary))]/20 hover:border-[hsl(var(--primary))]/50 transition-colors">
               <div className="relative h-64 w-full overflow-hidden">
-                <Image src="/images/mentors/tech-director.jpg" alt="Technology Director portrait" width={300} height={300} className="object-cover" />
+                <Image src="/images/mentors/tech-director.jpg" alt="Technology Director portrait" fill className="object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold">Head of Career Services</h3>
-                <p className="text-primary">Career Guidance Expert</p>
-                <p className="mt-4 text-muted-foreground">
+                <p className="text-[hsl(var(--primary))]">Career Guidance Expert</p>
+                <p className="mt-4 text-[hsl(var(--muted-foreground))]">
                   Providing expert career guidance and developing our counseling methodologies.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary/50 transition-colors">
+            <Card className="overflow-hidden border-[hsl(var(--primary))]/20 hover:border-[hsl(var(--primary))]/50 transition-colors">
               <div className="relative h-64 w-full overflow-hidden">
-                <Image src="/placeholder.svg?height=300&width=300" alt="Team Member" fill className="object-cover" />
+                <Image
+                  src="/images/mentors/tech-lead.jpg"
+                  alt="Technology Director portrait"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold">Technology Director</h3>
-                <p className="text-primary">Tech Innovation</p>
-                <p className="mt-4 text-muted-foreground">
+                <p className="text-[hsl(var(--primary))]">Tech Innovation</p>
+                <p className="mt-4 text-[hsl(var(--muted-foreground))]">
                   Driving technological innovation to enhance user experience and platform capabilities.
                 </p>
               </CardContent>
@@ -165,4 +170,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

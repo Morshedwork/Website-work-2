@@ -51,8 +51,15 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="relative h-10 w-32">
-            <Image src="/images/ujjibon-logo.png" alt="Ujjibon Logo" fill className="object-contain" priority />
+          <div className="logo-container">
+            <Image
+              src="/images/ujjibon-logo.png"
+              alt="Ujjibon Logo"
+              width={128}
+              height={32}
+              className="object-contain"
+              priority
+            />
           </div>
         </Link>
 

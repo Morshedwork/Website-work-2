@@ -7,8 +7,14 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="relative h-12 w-36 mb-4">
-              <Image src="/images/ujjibon-logo.png" alt="Ujjibon Logo" fill className="object-contain" />
+            <div className="logo-container mb-4">
+              <Image
+                src="/images/ujjibon-logo.png"
+                alt="Ujjibon Logo"
+                width={128}
+                height={32}
+                className="object-contain"
+              />
             </div>
             <p className="text-muted-foreground">
               Bangladesh's first career counseling and community platform dedicated to empowering students.
